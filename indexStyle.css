@@ -1,0 +1,192 @@
+html, body {
+    height: 100%;                   /* allow elements to take up full height of browser window */
+}
+
+body {
+    margin: 0;                      /* remove default browser margin */
+    display: flex;                  /* body is a flex container*/
+    flex-direction: column;
+}
+
+.site-title {
+    margin: 0;                      /* remove default marfings around the site title */
+}
+
+.header {
+    padding: 15px;
+    background-color: #d77599;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;              /* align items to the bottom of the header */
+    justify-content: flex-start;        /* keep items on the left*/
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;                          /* add space between items*/
+    margin-left: auto;                  /* push group all the way to the right */
+}
+
+.box-link {                             /* style link to look like a button */
+    width: 80px;
+    height: 50px;
+    background-color: #F4C2D4;
+    border: 2px solid #000;
+    text-decoration: none;              /* remove underline */
+    color: black;
+
+    display: flex;
+    align-items: center;                /* center text */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.box-link:hover {
+    background-color: #f1a9c2;      /* change background color when mouse hovers button */
+}
+
+.content {   
+    background-color: #F4C2D4;
+    padding: 20px;                      /* set inner spacing */
+
+    max-width: 1000px;                  /* limit content width */
+    width: 100%;
+    margin: 30px auto;                  /* center content horizontally using auto margins*/
+
+    display: flex;
+    flex-direction: column;             /* stack content vertically */
+    align-items: center;                /* center child elements */
+
+    flex: 1;                            /* pushes footer down*/
+    box-sizing: border-box;             /* padding in width calculation */
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-self: flex-end;
+}
+
+.textbox {
+    width: 200px;
+    height: auto;                       /* height adjusts to content */
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.6);         /* semi transparant background*/
+}
+
+.content p {
+    margin: 0;                          /* remove default space around paragraph in content box*/
+}
+
+.image img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: auto;
+
+    border: 10px solid white;           /* white frame around image*/
+    box-sizing: border-box;
+}
+
+.image-wrap{
+    position: relative;                     /* absolute position */
+    width: 300px;
+    margin-left: 200px;
+}
+
+.image-wrap img{
+    width: 300px;                           /* image must fit the container*/
+    height: auto;
+    display: block;
+    border: 10px solid white;
+    box-sizing: border-box;
+}
+
+.image-wrap .textbox{                       /* place textbox on top of image*/
+    position: absolute;
+    top: 150px;
+    right: 250px;
+    width: 400px;
+    padding: 15px;
+    background-color: rgba(255,255,255,0.75);
+    box-sizing: border-box;
+    z-index: 2;                             /* keep above image */
+    border-radius: 8px; 
+}
+
+.footer {
+    background-color: #d77599;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    height: 50px;
+}
+
+.footer p {
+    margin: 0;                              /* remove default spacing */
+}
+
+
+/* Apply styles on smaller screens*/
+@media (max-width: 770px){
+    /* stack header items vertically*/
+    .header {
+        align-items: flex-start;
+
+        height: auto;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .box-link {
+        width: 70px;
+        height: 40 px;
+        font-size: 0.9rem;
+    }
+
+    .content {
+        margin: 12px auto;
+        padding: 16px;
+    }
+
+    /* remove overlay of textbox and images */
+    .image-wrap {
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-wrap img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 15px;
+    }
+
+    .image-wrap .textbox {
+        position: static;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 15px;
+        right: auto;
+        top: auto;
+    }
+
+    .text-group {
+        align-self: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .textbox {
+        width: 100%;
+        max-width: 300px;
+    }
+}

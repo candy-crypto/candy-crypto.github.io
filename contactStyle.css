@@ -1,0 +1,140 @@
+html, body {
+    height: 100%;                               /* allow elements to take up full height of browser window */
+}
+
+body {
+    margin: 0;                                  /* remove default margin */
+    display: flex;                              /* create flex container*/
+    flex-direction: column;
+}
+
+.site-title {
+    margin: 0;                      /* remove default marfings around the site title */
+}
+
+.header {
+    padding: 15px;
+    background-color: #d77599;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;              /* align items to the bottom of the header */
+    justify-content: flex-start;        /* keep items on the left*/
+}
+
+.header-right {
+    display: flex;
+    gap: 20px;                          /* add space between items*/
+    margin-left: auto;                  /* push group all the way to the right */
+}
+
+.box-link {                             /* style link to look like a button */
+    width: 80px;
+    height: 50px;
+    background-color: #F4C2D4;
+    border: 2px solid #000;
+    text-decoration: none;              /* remove underline */
+    color: black;
+
+    display: flex;
+    align-items: center;                /* center text */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.box-link:hover {
+    background-color: #f1a9c2;
+}
+
+.content {   
+    background-color: #F4C2D4;
+    padding: 20px;
+    
+    max-width: 1000px;
+    width: 100%;
+    margin: 30px auto;                  /* center */
+
+    display: flex;
+    align-items: center;                /* vertically center items*/
+    justify-content: space-between;     /* spread items apart across the row*/
+    gap: 20px;
+    flex-wrap: wrap;                    /* items drop to new line on smaller screens */
+
+    flex: 1;                            /* push footer down*/
+    box-sizing: border-box;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;                            /* take available space*/
+    min-width: 260;                     /* prevent crushing*/
+}
+
+
+.textbox {
+    width: 300px;
+    height: auto;                       /* text box grows if text wraps */
+    padding: 15px;
+    background-color: rgba(255,255,255,0.75);
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.content p {
+    margin: 0;                          /* remove default paragraph margins */
+}
+
+.footer {
+    background-color: #d77599;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    height: 50px;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Media blcok overrides styles for smaller screens*/
+@media (max-width: 770px){
+    /* items stack vertically */
+    .header{
+        align-items: flex-start;
+        height: auto;
+
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .site-title {
+        text-align: center;
+        font-size: 1.2rem;          /* redice size */
+    }
+
+    .header-right{
+        gap: 10px;
+    }
+
+    .box-link{
+        width: 70px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .content{
+        margin: 12px auto;
+        padding: 16px;
+    }
+
+    .textbox {
+        width: 100%;
+        max-width: 300px;
+    }
+}
