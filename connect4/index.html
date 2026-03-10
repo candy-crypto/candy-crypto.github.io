@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    <div class="row">
+        <h1>Connect 4</h1>
+        <p id="instructions">Instructions: connect 4 circles of the same color.</p>
+    </div>
+
+    <!--CSS edits the class and JS changes the status, who's turn is next-->
+    <div class="turnStatus" id="status">Turn: Red</div>
+
+    <!--Message box is hidden until JS shows it-->
+    <div id="game-over-box">Game Over!</div>
+
+    <!--The board container will have 7 columns and 6 cells in each column-->
+    <div class="board">
+        <!--The class lets JS attach behvaior. The data-col lets script know which column was clicked-->
+        <div class="col" data-col="1">
+            <div class="cell" id="col1row6"></div>
+            <div class="cell" id="col1row5"></div>
+            <div class="cell" id="col1row4"></div>
+            <div class="cell" id="col1row3"></div>
+            <div class="cell" id="col1row2"></div>
+            <div class="cell" id="col1row1"></div>
+        </div>
+
+        <div class="col" data-col="2">
+            <div class="cell" id="col2row6"></div>
+            <div class="cell" id="col2row5"></div>
+            <div class="cell" id="col2row4"></div>
+            <div class="cell" id="col2row3"></div>
+            <div class="cell" id="col2row2"></div>
+            <div class="cell" id="col2row1"></div>
+        </div>
+
+        <div class="col" data-col="3">
+            <div class="cell" id="col3row6"></div>
+            <div class="cell" id="col3row5"></div>
+            <div class="cell" id="col3row4"></div>
+            <div class="cell" id="col3row3"></div>
+            <div class="cell" id="col3row2"></div>
+            <div class="cell" id="col3row1"></div>
+        </div>
+
+        <div class="col" data-col="4">
+            <div class="cell" id="col4row6"></div>
+            <div class="cell" id="col4row5"></div>
+            <div class="cell" id="col4row4"></div>
+            <div class="cell" id="col4row3"></div>
+            <div class="cell" id="col4row2"></div>
+            <div class="cell" id="col4row1"></div>
+        </div>
+
+        <div class="col" data-col="5">
+            <div class="cell" id="col5row6"></div>
+            <div class="cell" id="col5row5"></div>
+            <div class="cell" id="col5row4"></div>
+            <div class="cell" id="col5row3"></div>
+            <div class="cell" id="col5row2"></div>
+            <div class="cell" id="col5row1"></div>
+        </div>
+
+        <div class="col" data-col="6">
+            <div class="cell" id="col6row6"></div>
+            <div class="cell" id="col6row5"></div>
+            <div class="cell" id="col6row4"></div>
+            <div class="cell" id="col6row3"></div>
+            <div class="cell" id="col6row2"></div>
+            <div class="cell" id="col6row1"></div>
+        </div>
+
+        <div class="col" data-col="7">
+            <div class="cell" id="col7row6"></div>
+            <div class="cell" id="col7row5"></div>
+            <div class="cell" id="col7row4"></div>
+            <div class="cell" id="col7row3"></div>
+            <div class="cell" id="col7row2"></div>
+            <div class="cell" id="col7row1"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
