@@ -1,0 +1,66 @@
+body {
+    background-color: rgb(170, 218, 247);
+    margin: 0;                                  /*Remove browser default outer spcaing*/
+}
+
+.row {
+    margin: 20px;
+    font-weight: bold;
+}
+
+.turnStatus {
+    text-align: center;                         /*Place the container in the center of the page*/
+    font-weight: bold;
+}
+
+.board {
+    display: grid;                               /*Turn container into a grid */
+    grid-template-columns: repeat(7, 1fr);      /*Create 7 columns with equal space*/
+    width: 630px;
+    margin: 30px auto;
+    background-color: blue;
+    padding: 10px;                              /*Add spacing between edge of board and the cells*/
+}
+
+.col {
+    display: grid;                              /*Each column is a grid container*/
+    place-items: center;                        /*Center the cells*/
+    cursor: pointer;                            /*Change mouse cursor to a pointer*/
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 50%;
+    margin: 5px;
+    display: flex;
+    align-items: center;                        /*Center the content inside the cells*/
+    justify-content: center;
+}
+
+/*Style the game piece*/
+.piece {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.highlight {
+    outline: 3px solid lightblue;               /*Add an outline around selected column*/
+}
+
+#game-over-box {
+    display: none;                                /*Initially hidden*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    color: white;
+    padding: 20px 40px;
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 1000;                                  /*Box appears on top of other page elements*/
+}
