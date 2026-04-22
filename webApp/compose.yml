@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+    
+  node:
+    restart: always
+    container_name: mongo_test
+    environment:
+      NODE_NUMBER: 1
+      PORT: 3000
+      MONGODB_URI: mongodb://root:example@mongo:27017/mealsdb?authSource=admin
+    ports:
+      - '25624:3000' #note you will need to change 2106 to your assigned port number
+    build:
+      context: .
+      dockerfile: ./Dockerfile.node
+    depends_on:
+      mongo:
+        condition: service_healthy
+        restart: true
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes: 
+      - database_volume:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping').ok", "--quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+
+volumes:
+  database_volume:

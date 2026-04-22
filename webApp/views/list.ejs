@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        Meal List
+    </title>
+</head>
+<body>
+    <h1>All Meals</h1>
+
+    <% if (meals.length === 0) { %>
+        <p> No meals found.</p>
+    <% } else { %>
+        <ul>
+            <% meals.forEach(meal => {%>
+                <li>
+                    Meal Type/Name: <%= meal.mealName || "Unnamed Meal" %>,
+                    Protein (g): <%= meal.protein%>,
+                    Carbs (g): <%= meal.carbs %>,
+                    Fats (g): <%= meal.fats %>,
+                    Sugar (g): <%= meal.sugar %>,
+                    Meal Date: <%= new Date(meal.date).toLocaleDateString() %>,
+                    Notes: <%= meal.notes %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <p><a href="/upload">Upload Another</a></p>
+    <p><a href="/query">Query Meals</a></p>
+</body>
+</html>

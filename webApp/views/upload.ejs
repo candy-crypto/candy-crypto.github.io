@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        Upload Meal
+    </title>
+</head>
+<body>
+    <h1>Upload Meal</h1>
+
+    <form action="/upload" method="POST">
+        <label>Meal Type:
+            <select name="mealName" required>
+                <option value="">Select a meal type</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+                <option value="beverage">Beverage</option>
+            </select>
+        </label><br />
+        <label>Protein (g): <input type="number" name="protein" required /></label><br />
+        <label>Carbs (g): <input type="number" name="carbs" required /></label><br />
+        <label>Fats (g): <input type="number" name="fats" required /></label><br />
+        <label>Sugar (g): <input type="number" name="sugar" required /></label><br />
+        <label>Meal Date: <input type="date" name="date" required /></label><br />
+        <label>Notes: <input type="text" name="notes" /></label><br />
+        <button type="submit">Create Meal</button>
+    </form>
+
+    <p><a href="/list">View All Meals</a></p>
+    <p><a href="/query">Query Meals</a></p>
+</body>
+</html>
